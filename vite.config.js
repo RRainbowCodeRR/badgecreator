@@ -1,24 +1,9 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  // Base config options
-  base: "/",
-
-  // Build options
+  base: "/qr-badge-creator/", // Replace with your repository name
   build: {
-    target: "esnext",
     outDir: "dist",
-  },
-
-  // Server options
-  server: {
-    port: 5173,
-    strictPort: false,
-    open: true,
-  },
-
-  // Dependency optimization options
-  optimizeDeps: {
-    include: ["qrcode"],
+    assetsDir: "assets",
   },
 });
