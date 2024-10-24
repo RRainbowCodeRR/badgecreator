@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/qrcode.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WFM QR Badge Creator</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Badge Creator</h1>
+    </header>
+    <div class="main-container">
+      <div class="input-group">
+        <div class="input-wrapper">
+          <label for="nameInput">Name:</label>
+          <input type="text" id="nameInput" placeholder="Enter name" />
+        </div>
+        <div class="input-wrapper">
+          <label for="userIDInput">User ID:</label>
+          <input type="text" id="userIDInput" placeholder="Enter user ID" />
+        </div>
+        <div class="input-wrapper">
+          <label for="passwordInput">Password:</label>
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="Enter password"
+          />
+        </div>
+        <div class="button-group">
+          <button id="generateButton">Generate QR Codes</button>
+        </div>
+      </div>
+
+      <div class="card-container">
+        <div class="card">
+          <div class="card-title" id="frontTitle">Front Side</div>
+          <canvas class="canvas" id="frontCanvas"></canvas>
+          <p id="displayName"></p>
+        </div>
+        <div class="card">
+          <div class="card-title" id="backTitle">Back Side</div>
+          <canvas class="canvas" id="backCanvas"></canvas>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
