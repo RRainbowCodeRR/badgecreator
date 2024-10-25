@@ -94,6 +94,7 @@ function createPrintableVersion() {
                     text-align: center;
                     padding: 10px;
                     box-sizing: border-box;
+                    position: relative;
                 }
                 
                 .qr-image {
@@ -108,6 +109,25 @@ function createPrintableVersion() {
                     margin-top: 0.1in;
                 }
 
+                .userIcon-image {
+                    width: .5in;
+                    height: .5in;
+                    margin:  auto;
+                }
+
+                .passKeyIcon-image {
+                    width: .63in;
+                    height: .35in;
+                    margin: auto;
+                }
+
+                .instructions {
+                    margin-top: 4in;
+                    align-text: center;
+                    position: absolute;
+}
+
+
                 @media print {
                     body {
                         -webkit-print-color-adjust: exact;
@@ -118,13 +138,28 @@ function createPrintableVersion() {
         </head>
         <body>
             <div class="card">
-                <img src="${frontQR}" class="qr-image" alt="Front QR Code">
                 <div class="name">${displayName}</div>
+                <img src="${frontQR}" class="qr-image" alt="Front QR Code">
+                <img src="/userIcon.png" class="userIcon-image" alt="User Icon">
+                
             </div>
             
             <div class="card">
+                <div class="name">${displayName}</div>
                 <img src="${backQR}" class="qr-image" alt="Back QR Code">
+                <img src="/passKeyIcon.png" class="passKeyIcon-image" alt="Key Icon">
             </div>
+            <p class="instructions">
+            <b>Instructions:</b>
+            <br>
+            1.) Cut the the badges out along the dashed lines.
+            <br>
+            2.) Place badges back to back with QR code facing out in a badge holder.
+            <br>
+            3.) Please do not let any unauthorized access to your badge. Do not share it with anyone.
+            <br>
+            4.) You will need to update the password QR quarterly once your current password expires.
+            </p>
         </body>
         </html>
     `;
